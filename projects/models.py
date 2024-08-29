@@ -28,7 +28,7 @@ class Links(models.Model):
     twitter = models.TextField()
     facebook = models.TextField()
     instagram = models.TextField()
-
+    google_form = models.TextField(null=True)
     def __str__(self):
         return f"Social Media Links"
 
