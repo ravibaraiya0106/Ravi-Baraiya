@@ -18,8 +18,43 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<link href="{{ info.photo.url }}" rel="icon">
-    <link href="{{ info.photo.url }}" rel="apple-touch-icon">
+	<link href="{{ info.photo.url }}" rel="apple-touch-icon">
 
+	<style>
+		.responsive-image {
+			margin-top: 85px;
+			margin-left: 100px;
+			/* Default margin for larger screens */
+			border-radius: 50%;
+			border: 5px solid orange;
+		}
+
+		@media (max-width: 768px) {
+			.responsive-image {
+				width: 300px;
+				/* Adjust the image size for smaller screens */
+				margin-left: auto;
+				/* Center the image horizontally */
+				margin-right: auto;
+				/* Center the image horizontally */
+				display: block;
+				/* Ensure the image is treated as a block element */
+			}
+		}
+
+		@media (max-width: 480px) {
+			.responsive-image {
+				width: 200px;
+				/* Further adjust the image size for very small screens */
+				margin-left: auto;
+				/* Center the image horizontally */
+				margin-right: auto;
+				/* Center the image horizontally */
+				margin-top: 50px;
+				/* Adjust the top margin if needed */
+			}
+		}
+	</style>
 
 </head>
 
@@ -31,8 +66,7 @@
 		<div class="container">
 			<a class="navbar-brand" href=""><img src="{{ info.logo.url }}" width="150px"></a>
 			<!-- GitHub button with icon -->
-			<a href="{{ links.github }}" target="_blank"
-				class="btn btn-primary py-2 px-3 order-lg-last ml-2">
+			<a href="{{ links.github }}" target="_blank" class="btn btn-primary py-2 px-3 order-lg-last ml-2">
 				<i class="fab fa-github"></i> GitHub
 			</a>
 
@@ -66,11 +100,8 @@
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
 						<div class="one-third js-fullheight order-md-last img">
-							<!-- style="background-image:url('{{ info.photo.url }}')"> -->
-							<img src="{{ info.photo.url }}" style="width: 500px; margin-top: 150px; margin-left: 100px; border-radius: 50%; border: 5px solid orange; ">
-
-							<div class="overlay">
-							</div>
+							<img src="{{ info.photo.url }}" class="responsive-image">
+							<div class="overlay"></div>
 						</div>
 						<div class="one-forth d-flex  align-items-center ftco-animate"
 							data-scrollax=" properties: { translateY: '70%' }">
@@ -119,8 +150,8 @@
 
 								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
 								<!-- <br> -->
-								<p><a href="{{ links.github }}" target="_blank"
-										class="btn btn-primary py-3 px-4">My works</a> </p>
+								<p><a href="{{ links.github }}" target="_blank" class="btn btn-primary py-3 px-4">My
+										works</a> </p>
 							</div>
 						</div>
 					</div>
@@ -157,8 +188,7 @@
 						<span class="number" data-number="{{ info.total_projects }}">0</span> <span>+</span>
 						<span>&nbsp; Projects completed</span>
 					</p>
-					<p><a href="{{ links.linkedin }}" target="_blank"
-							class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+					<p><a href="{{ links.linkedin }}" target="_blank" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
 				</div>
 			</div>
 
@@ -292,22 +322,24 @@
 					<div class="blog-entry justify-content-end resume-wrap">
 						<!-- Image with proper styling -->
 						<img src="{{ project.thumbnail.url }}" class="img-fluid" alt="Thumbnail">
-			
+
 						<div class="text mt-3 float-right d-block">
 							<h3 class="heading">{{ project.name }}</h3>
 							<p>{{ project.desc }}</p>
-			
+
 							<!-- Button row directly after the description -->
 							<div class="d-flex justify-content-between mt-3">
-								<button class="codebutton"><a href="{{ project.codelink }}" target="_blank">Code</a></button>
-								<button class="livebutton"><a href="{{ project.livelink }}" target="_blank">Live</a></button>
+								<button class="codebutton"><a href="{{ project.codelink }}"
+										target="_blank">Code</a></button>
+								<button class="livebutton"><a href="{{ project.livelink }}"
+										target="_blank">Live</a></button>
 							</div>
 						</div>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
-			
+
 			<br>
 		</div>
 	</section>
@@ -379,8 +411,8 @@
 						<li class="d-flex justify-content-center">
 							<a href="{{ links.github }}" target="_blank" class="ftco-animate ml-3"><span
 									class="icon-github"></span></a>
-							<a href="{{ links.linkedin }}" target="_blank"
-								class="ftco-animate ml-3"><span class="icon-linkedin"></span></a>
+							<a href="{{ links.linkedin }}" target="_blank" class="ftco-animate ml-3"><span
+									class="icon-linkedin"></span></a>
 							<a href="{{ links.twitter }}" target="_blank" class="ftco-animate ml-3"><span
 									class="icon-twitter"></span></a>
 							<a href="{{ links.facebook }}" target="_blank" class="ftco-animate ml-3"><span
