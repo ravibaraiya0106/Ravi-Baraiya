@@ -1,0 +1,442 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Ravi Baraiya Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link href="{{ info.photo.url }}" rel="icon">
+    <link href="{{ info.photo.url }}" rel="apple-touch-icon">
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-white ftco_navbar ftco-navbar-light site-navbar-target"
+		id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href=""><img src="{{ info.logo.url }}" width="150px"></a>
+			<!-- GitHub button with icon -->
+			<a href="{{ links.github }}" target="_blank"
+				class="btn btn-primary py-2 px-3 order-lg-last ml-2">
+				<i class="fab fa-github"></i> GitHub
+			</a>
+
+			<!-- Toggle button -->
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span>
+			</button>
+
+			<!-- Navbar items -->
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+					<li class="nav-item"><a href="#experience-section" class="nav-link"><span>Experience</span></a></li>
+					<li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
+					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<section id="home-section" class="hero">
+		<div class="home-slider  owl-carousel">
+			<div class="slider-item ">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img">
+							<!-- style="background-image:url('{{ info.photo.url }}')"> -->
+							<img src="{{ info.photo.url }}" style="width: 500px; margin-top: 150px; margin-left: 100px; border-radius: 50%; border: 5px solid orange; ">
+
+							<div class="overlay">
+							</div>
+						</div>
+						<div class="one-forth d-flex  align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello!</span>
+								<h1 class="mb-4 mt-3">I'm <span>Ravi Baraiya</span></h1>
+
+								<!-- Element to contain animated typing -->
+								<span id="typing-animation"></span>
+
+								<script>
+
+									// Initialize the typing animation
+									const typingAnimationElement = document.getElementById('typing-animation');
+
+									// Create an array of typing text
+									const typingTexts = [
+										'Python Developer  ',
+										'Django Developer  ',
+
+									];
+
+									// Create a function to display the typing animation for a given text
+									function playTypingAnimation(text) {
+										// Loop through each character and add it to the element
+										for (let i = 0; i < text.length; i++) {
+											setTimeout(() => {
+												typingAnimationElement.textContent += text[i];
+											}, i * 200); // Increase the delay to slow down the typing animation
+										}
+
+										// Once the animation is complete, reset the text and start over
+										setTimeout(() => {
+											typingAnimationElement.textContent = '';
+											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+										}, text.length * 200);
+									}
+
+									// Start the typing animation loop
+									playTypingAnimation(typingTexts[0]);
+
+								</script>
+
+								<br>
+								<br>
+
+								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+								<!-- <br> -->
+								<p><a href="{{ links.github }}" target="_blank"
+										class="btn btn-primary py-3 px-4">My works</a> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row justify-content-start pb-3">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+
+					<h1 class="big big-2">About</h1>
+					<h2 class="mb-4">About Me</h2>
+
+					<p align="justify">Hello! I'm Ravi Baraiya, a motivated individual with a keen interest in backend
+						development. With a strong foundation in Python and Django, I'm dedicated to delivering
+						high-quality results and always eager to take on new challenges. My passion for learning drives
+						me to continuously expand my skill set and contribute effectively to dynamic projects. I thrive
+						in collaborative environments and am excited to explore opportunities to create innovative and
+						impactful solutions. Let’s connect and see how we can achieve great things together!
+					</p>
+
+				</div>
+			</div>
+
+
+			<div class="counter-wrap ftco-animate d-flex justify-content-center align-items-center mt-md-3">
+				<div class="text text-center">
+					<p class="mb-4">
+						<span class="number" data-number="{{ info.total_projects }}">0</span> <span>+</span>
+						<span>&nbsp; Projects completed</span>
+					</p>
+					<p><a href="{{ links.linkedin }}" target="_blank"
+							class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section ftco-no-pb" id="skills-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-10 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Skills</h1>
+					<h2 class="mb-4">Skills</h2>
+					<br><br><br>
+					<div class="row">
+						{% for skill in skills %}
+						<div class="col-md-2 ftco-animate">
+							<div class="skill-item">
+								<img src="{{ skill.logo.url }}" alt="Logo" class="skill-icon">
+								<p class="ftco-animate">{{ skill.name }}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<br><br><br>
+
+	</section>
+
+	<section class="ftco-section ftco-no-pb" id="experience-section">
+		<div class="container">
+
+			<div class="row">
+				<h1 class="big-4">Experience</h1>
+				<div class="underline"></div>
+			</div>
+			<br>
+			<p>I am a fresher, but i complete a following projects.</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">Bloggy - JI</span>
+						<h2>Blog Management System</h2>
+					</div>
+
+				</div>
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">E-Comeerce</span>
+						<h2>E-Commerce Website</h2>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">TextUtils</span>
+						<h2>TextUtils Website</h2>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<br>
+
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pb" id="education-section">
+		<div class="container">
+
+			<div class="row">
+				<h1 class="big-4">Education</h1>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2018-2019</span>
+						<h2>Secondary School</h2>
+						<span class="position">Shree Vidhyavihar Madhyamik Shala</span>
+						<p class="mt-4">Percentages: 72.33%</p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2020-2021</span>
+						<h2>Higher Secondary School</h2>
+						<span class="position">Sarthi Vidhya Sankul</span>
+						<p class="mt-4">Percentages: 74.57%</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2021-2024</span>
+						<h2>Bachelor of Computer Applications</h2>
+						<span class="position">Shree Swaminarayan College of Computer Science</span>
+						<p class="mt-4">Percentages: 75.00%</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6 text-center ftco-animate">
+					<p><a href="{{ info.resume }}" target="_blank" class="btn btn-primary py-4 px-5">Download CV</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="ftco-section" id="project-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Projects</h1>
+					<h2 class="mb-4">Projects</h2>
+					<p>Below are the sample of python and django projects.</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				{% for project in projects %}
+				<div class="col-md-4 d-flex ftco-animate ">
+					<div class="blog-entry justify-content-end resume-wrap">
+						<!-- Image with proper styling -->
+						<img src="{{ project.thumbnail.url }}" class="img-fluid" alt="Thumbnail">
+			
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading">{{ project.name }}</h3>
+							<p>{{ project.desc }}</p>
+			
+							<!-- Button row directly after the description -->
+							<div class="d-flex justify-content-between mt-3">
+								<button class="codebutton"><a href="{{ project.codelink }}" target="_blank">Code</a></button>
+								<button class="livebutton"><a href="{{ project.livelink }}" target="_blank">Live</a></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			
+			<br>
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Contact</h1>
+					<h2 class="mb-4">Contact Me</h2>
+					<p>Below are the details to reach out to me!</p>
+				</div>
+			</div>
+
+			<div class="row d-flex contact-info mb-5">
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<h3 class="mb-4">Address</h3>
+						<p>{{ info.address }}</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p>{{ info.contact_no }}</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4">Email Address</h3>
+						<p>{{ info.email }}</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-globe"></span>
+						</div>
+						<h3 class="mb-4">Download Resume</h3>
+						<p><a href="{{ info.resume }}">resumelink</a></p>
+					</div>
+				</div>
+
+				<div class="container">
+					<br>
+					<br>
+					<div class="row justify-content-center">
+						<div class="col-md-7 ftco-animate text-center">
+							<h2>Have a<span> Question? </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77"
+									class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+						</div>
+					</div>
+					<br>
+					<ul
+						class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0 flex-column">
+						<li class="ftco-animate normal-txt mb-2">Find me on</li>
+						<li class="d-flex justify-content-center">
+							<a href="{{ links.github }}" target="_blank" class="ftco-animate ml-3"><span
+									class="icon-github"></span></a>
+							<a href="{{ links.linkedin }}" target="_blank"
+								class="ftco-animate ml-3"><span class="icon-linkedin"></span></a>
+							<a href="{{ links.twitter }}" target="_blank" class="ftco-animate ml-3"><span
+									class="icon-twitter"></span></a>
+							<a href="{{ links.facebook }}" target="_blank" class="ftco-animate ml-3"><span
+									class="icon-facebook"></span></a>
+							<a href="{{ links.instagram }}" target="_blank" class="ftco-animate ml-3"><span
+									class="icon-instagram"></span></a>
+						</li>
+					</ul>
+
+					<br>
+				</div>
+			</div>
+	</section>
+
+
+
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						All rights reserved
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/aos.js' %}"></script>
+	<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+	<script src="{% static 'js/scrollax.min.js' %}"></script>
+
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
