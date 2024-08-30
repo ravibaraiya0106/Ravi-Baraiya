@@ -8,7 +8,6 @@ class Info(models.Model):
     address = models.TextField()
     contact_no = models.CharField(max_length=15)
     email = models.EmailField()
-    resume = models.FileField(blank=True, null=True, upload_to='media')
     total_projects = models.IntegerField(null=True)
 
     def __str__(self):
